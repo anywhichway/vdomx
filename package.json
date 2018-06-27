@@ -1,0 +1,26 @@
+{
+  "name": "vdomx",
+  "version": "0.0.2",
+  "description": "Does for the DOM what JSX does for JavaScript. Adds interpolation and custom directives to your VDOM and regular HTML.",
+  "engines": {
+    
+  },
+  "license": "MIT",
+  "scripts": {
+  	"prepare": "cp index.js vdomx.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anywhichway/vdomx.git"
+  },
+  "keywords": ["jsx","transpile","translate","vdom","directives"],
+  "author": "Simon Y. Blackwell <syblackwell@anywhichway.com> (http://www.github.com/anywhichway)",
+  "bugs": {
+    "url": "https://github.com/anywhichway/vdomx/issues"
+  },
+  "homepage": "https://github.com/anywhichway/vdomxs#readme",
+  "devDependencies": {},
+  "dependencies": {
+    
+  }
+}

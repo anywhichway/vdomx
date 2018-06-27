@@ -1,0 +1,37 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/preact/dist/preact.js"></script>
+<script src="../index.js"></script>
+</head>
+<body>
+
+<p>The template below would normally not be visible</p>
+&lt;template id="message" style:style="${attributes[this].fontWeight}"&gt;
+<br>&nbsp;&nbsp;Hello, ${name||"Anonymous"}!
+<br>&nbsp;&nbsp;&lt;ul vx-foreach="${favorite-colors}"&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li style:style="color:${value}"&gt;${value}&lt;/li&gt;
+<br>&nbsp;&nbsp;&lt;/ul&gt;
+<br>&lt;/template&gt;
+<template id="message">
+	<p>Hello,<span style:style="font-weight:${attributes[this].fontWeight}">&nbsp;${name||"Anonymous"}!</span></p>
+	<ul vx-foreach="${favoriteColors}">
+		<li style:style="color:${value}">${value}</li>
+	</ul>
+</template>
+<p>Below are the interpolated values rendered using preact and vdomx itself with {attributes:{style:{fontWeight:"bold"}},state:{name:"Joe",favoriteColors:["blue","green"]}} as the replacement object.</p>
+<p><div id="preact"></div></p>
+<p><div id="vdomx"></div></p>
+
+<script>
+
+const vdom = vdomx.compile(document.getElementById("message")),
+	data = {attributes:{style:{fontWeight:"bold"}},state:{name:"Joe",favoriteColors:["blue","green"]}};
+
+preact.render(vdom.render(data),document.getElementById("preact"));
+
+vdom.render(data,document.getElementById("vdomx"));
+
+</script>
+
+</body>
+</html>
