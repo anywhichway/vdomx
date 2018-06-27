@@ -1,7 +1,7 @@
 {
   "name": "vdomx",
-  "version": "0.0.2",
-  "description": "Does for the DOM what JSX does for JavaScript. Adds interpolation and custom directives to your VDOM and regular HTML.",
+  "version": "0.0.3",
+  "description": "Does for the DOM and VDOMs what JSX does for JavaScript. Adds interpolation and custom directives to your HTML.",
   "engines": {
     
   },
