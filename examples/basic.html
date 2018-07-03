@@ -1,0 +1,41 @@
+<html>
+<head>
+<script src="../index.js"></script>
+<template vx-tagname="message3">
+	${message} <input value="${name}" onchange="vdomx.linkState(event.target,'name')">
+</template>
+<template vx-tagname="message4">
+	${message} <input value="${name}" onchange="this.setState({name:this.value})">
+	${name}
+</template>
+</head>
+<body onload="vdomx.compile().render({message:'Hello',name:'Jane'})">
+
+<script>
+const message1 = vdomx.Component((attributes,data) => vdomx.h("div",{},[`${data.message} ${data.name}`]),"Message1");
+message1.onclick = () => alert('ok');
+message1.testFunction = () => true;
+message1.oncreate = () => console.log("created");
+message1.onupdate = () => console.log("updated");
+message1.ondestroy = () => console.log("destroyed");
+/*
+ * componentWillMount	before the component gets mounted to the DOM
+ componentDidMount	after the component gets mounted to the DOM
+ componentWillUnmount	prior to removal from the DOM
+ componentWillReceiveProps	before new props get accepted
+ shouldComponentUpdate	before render(). Return false to skip render
+ componentWillUpdate	before render()
+ componentDidUpdate	after render()
+ */
+
+vdomx.Component((attributes,data) => vdomx.h("div",{},[data.state.message,vdomx.h("input",{value:data.state.name})]),"Message2");
+</script>
+
+<message1 data-message="Hello" data-name="Joe"/></message1>
+<message2 data-state="${{message:'Hello',name:'Bill'}}"></message2>
+<message3 data-message="Hello" data-name="Mary"></message3>
+<message4 data-message="Hello" data-name="Dave"></message4>
+<div vx-on:click="() => alert('ok')">${message} ${name}</div>
+
+</body>
+</html>

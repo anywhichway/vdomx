@@ -1,4 +1,4 @@
-# vdomx v0.0.4
+# vdomx v0.0.5
 
 Does for the DOM and VDOMs what JSX does for JavaScript. Adds interpolation and custom directives to your HTML.
 
@@ -62,6 +62,8 @@ Note the use of `vx-forentries`, this is a smart directive that can take either 
 MIT
 
 # Release History (reverse chronological order)
+
+2018-07-01 v0.0.5 Simplified template resolution for components.
 
 2018-06-27 v0.0.4 Corrected example directory structure.
 
